@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/custom_toolbar"/>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="?attr/actionBarSize">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/unlocked"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp">
+
+            <Button
+                android:id="@+id/btn_resendotp"
+                style="@style/OTPStyle"
+                android:background="@drawable/custom_edit_button"
+                android:drawableStart="@drawable/resend_icon"
+                android:text="Resend OTP"/>
+
+            <Button
+                android:id="@+id/btn_editno"
+                style="@style/OTPStyle"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/custom_edit_button"
+                android:drawableStart="@drawable/e_dit_number"
+                android:text="Edit Number"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="@string/otpText"
+            android:textColor="#4a4a4a"
+            android:textSize="16sp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/tv_countrycode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="#4a4a4a"/>
+
+            <TextView
+                android:id="@+id/tv_phoneno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="#4a4a4a"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="72dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="26dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/et_text1"
+               style="@style/otpEditText"/>
+
+            <EditText
+                android:id="@+id/et_text2"
+                style="@style/otpEditText"
+                />
+
+            <EditText
+                android:id="@+id/et_text3"
+                style="@style/otpEditText"
+                />
+
+            <EditText
+                android:id="@+id/et_text4"
+                style="@style/otpEditText"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_button_background"
+            android:text="Verify"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</RelativeLayout>
