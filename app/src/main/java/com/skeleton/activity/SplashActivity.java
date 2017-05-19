@@ -128,6 +128,7 @@ public class SplashActivity extends BaseActivity implements FCMTokenInterface {
         if (accessToken == null) {
             startActivity(new Intent(this, SignupAndSigninActivity.class));
         } else {
+            Log.d("debug", accessToken);
             ApiInterface apiInterface = RestClient.getApiInterface();
             apiInterface.getProfile(accessToken).enqueue(new ResponseResolver<SignUpResponseModel>(getApplicationContext(), true, true) {
                 @Override

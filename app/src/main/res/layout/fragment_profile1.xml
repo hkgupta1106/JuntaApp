@@ -73,6 +73,10 @@
                 android:id="@+id/tv_text7"
                 style="@style/profile1TextView"
                 />
+            <TextView
+                android:id="@+id/tv_text8"
+                style="@style/profile1TextView"
+                />
 
         </LinearLayout>
 
@@ -92,14 +96,10 @@
                     android:layout_weight="1">
 
                     <com.skeleton.util.customview.MaterialEditText
-                        android:id="@+id/tv_relationshiphitory"
+                        android:id="@+id/et_relationshiphitory"
                         style="@style/profile1Text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:cursorVisible="false"
-                        android:focusableInTouchMode="false"
-                        android:gravity="center"
                         android:hint="@string/relationship_history"/>
 
                 </android.support.design.widget.TextInputLayout>
@@ -110,14 +110,10 @@
                     android:layout_weight="1">
 
                     <com.skeleton.util.customview.MaterialEditText
-                        android:id="@+id/tv_ethnicity"
+                        android:id="@+id/et_ethnicity"
                         style="@style/profile1Text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:cursorVisible="false"
-                        android:focusableInTouchMode="false"
-                        android:gravity="center"
                         android:hint="@string/ethnicity"/>
 
                 </android.support.design.widget.TextInputLayout>
@@ -128,14 +124,10 @@
                     android:layout_weight="1">
 
                     <com.skeleton.util.customview.MaterialEditText
-                        android:id="@+id/tv_religion"
+                        android:id="@+id/et_religion"
                         style="@style/profile1Text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:cursorVisible="false"
-                        android:focusableInTouchMode="false"
-                        android:gravity="center"
                         android:hint="@string/religion"/>
                 </android.support.design.widget.TextInputLayout>
 
@@ -145,14 +137,10 @@
                     android:layout_weight="1">
 
                     <com.skeleton.util.customview.MaterialEditText
-                        android:id="@+id/tv_height"
+                        android:id="@+id/et_height"
                         style="@style/profile1Text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:cursorVisible="false"
-                        android:focusableInTouchMode="false"
-                        android:gravity="center"
                         android:hint="@string/height"/>
 
                 </android.support.design.widget.TextInputLayout>
@@ -163,15 +151,10 @@
                     android:layout_weight="1">
 
                     <com.skeleton.util.customview.MaterialEditText
-                        android:id="@+id/tv_bodytype"
+                        android:id="@+id/et_bodytype"
                         style="@style/profile1Text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:cursorVisible="false"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"
-                        android:gravity="center"
                         android:hint="@string/body_type"/>
 
                 </android.support.design.widget.TextInputLayout>
@@ -182,14 +165,10 @@
                     android:layout_weight="1">
 
                     <com.skeleton.util.customview.MaterialEditText
-                        android:id="@+id/tv_smoking"
+                        android:id="@+id/et_smoking"
                         style="@style/profile1Text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:cursorVisible="false"
-                        android:focusableInTouchMode="false"
-                        android:gravity="center"
                         android:hint="@string/smoking"/>
 
                 </android.support.design.widget.TextInputLayout>
@@ -200,18 +179,39 @@
                     android:layout_weight="1">
 
                     <com.skeleton.util.customview.MaterialEditText
-                        android:id="@+id/tv_drinking"
+                        android:id="@+id/et_drinking"
                         style="@style/profile1Text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:cursorVisible="false"
-                        android:focusableInTouchMode="false"
-                        android:gravity="center"
                         android:hint="@string/drinking"/>
 
                 </android.support.design.widget.TextInputLayout>
 
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.skeleton.util.customview.MaterialEditText
+                        android:id="@+id/et_orientation"
+                        style="@style/profile1Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/orientation"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginStart="22dp"
+                    android:background="@drawable/custom_button_background"
+                    android:text="Next"
+                    android:textAllCaps="false"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

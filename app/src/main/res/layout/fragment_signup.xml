@@ -44,7 +44,7 @@
                 <com.skeleton.util.customview.MaterialEditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+91"
+                    android:text="@string/_91"
                     android:id="@+id/et_countrycode"
                     android:textSize="@dimen/font_xxlarge"/>
 
@@ -63,7 +63,7 @@
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
                 android:gravity="center"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:id="@+id/et_email"/>
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -76,7 +76,7 @@
                     android:id="@+id/tv_Gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Select Gender:"
+                    android:text="@string/select_gender"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"/>
@@ -91,14 +91,14 @@
                         android:id="@+id/rb_Male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Male"/>
+                        android:text="@string/male"/>
 
                     <RadioButton
                         android:id="@+id/rb_Female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:text="Female"/>
+                        android:text="@string/female"/>
 
                 </RadioGroup>
 
@@ -115,7 +115,7 @@
                 android:drawablePadding="10dp"
                 android:gravity="center"
                 android:id="@+id/et_dob"
-                android:hint="Date Of Birth"/>
+                android:hint="@string/date_of_birth"/>
 
             <com.skeleton.util.customview.MaterialEditText
                 android:layout_width="match_parent"
@@ -123,7 +123,7 @@
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
                 android:gravity="center"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:id="@+id/et_password"/>
 
             <com.skeleton.util.customview.MaterialEditText
@@ -133,13 +133,13 @@
                 android:drawablePadding="10dp"
                 android:gravity="center"
                 android:id="@+id/et_confirm_password"
-                android:hint="Confirm Password"/>
+                android:hint="@string/confirm_password"/>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="I accepet Terms os services and privacy policy"/>
+                android:text="@string/i_accepet_terms_os_services_and_privacy_policy"/>
 
 
             <Button
@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/custom_button_background"
-                android:text="sign up"
+                android:text="@string/sign_up"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_xlarge"/>
 

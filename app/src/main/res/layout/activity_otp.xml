@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:orientation="vertical"
+    android:id="@+id/rllayout">
 
     <include layout="@layout/custom_toolbar"/>
 
@@ -35,7 +36,7 @@
                 style="@style/OTPStyle"
                 android:background="@drawable/custom_edit_button"
                 android:drawableStart="@drawable/resend_icon"
-                android:text="Resend OTP"/>
+                android:text="@string/resend_otp"/>
 
             <Button
                 android:id="@+id/btn_editno"
@@ -43,7 +44,7 @@
                 android:layout_marginStart="6dp"
                 android:background="@drawable/custom_edit_button"
                 android:drawableStart="@drawable/e_dit_number"
-                android:text="Edit Number"/>
+                android:text="@string/edit_number"/>
         </LinearLayout>
 
         <TextView
@@ -54,7 +55,7 @@
             android:layout_marginTop="28dp"
             android:gravity="center"
             android:text="@string/otpText"
-            android:textColor="#4a4a4a"
+            android:textColor="@color/colorgrey"
             android:textSize="16sp"
             />
 
@@ -67,14 +68,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
-                android:textColor="#4a4a4a"/>
+                android:textColor="@color/colorgrey"/>
 
             <TextView
                 android:id="@+id/tv_phoneno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
-                android:textColor="#4a4a4a"/>
+                android:textColor="@color/colorgrey"/>
         </LinearLayout>
 
         <LinearLayout
@@ -114,7 +115,7 @@
             android:layout_marginStart="22dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/custom_button_background"
-            android:text="Verify"
+            android:text="@string/verify"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"/>

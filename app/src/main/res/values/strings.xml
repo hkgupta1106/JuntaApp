@@ -62,5 +62,28 @@
     <string name="body_type">Body Type</string>
     <string name="smoking">Smoking</string>
     <string name="drinking">Drinking</string>
+    <string name="phone_number_verification">Phone Number Verification</string>
+    <string name="skip"><![CDATA[Skip>>]]></string>
+    <string name="remember_me">Remember Me</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="signin">Signin</string>
+    <string name="email">Email</string>
+    <string name="_91">+91</string>
+    <string name="select_gender">Select Gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="i_accepet_terms_os_services_and_privacy_policy">I accepet Terms os services and privacy policy</string>
+    <string name="sign_up">sign up</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="edit_number">Edit Number</string>
+    <string name="verify">Verify</string>
+    <string name="add_your_5_interests">Add your 5 Interests</string>
+    <string name="save_continue"><![CDATA[Save & Continue]]></string>
+    <string name="orientation">Orientation</string>
+    <string name="enter_new_number">Enter New Number</string>
+    <string name="submit">Submit</string>
 
 </resources>

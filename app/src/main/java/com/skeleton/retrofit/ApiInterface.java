@@ -30,6 +30,7 @@ public interface ApiInterface {
     String GET_PROFILE = "api/user/getProfile";
     String RESEND_OTP = "api/user/resendOTP";
     String GET_CONSTANT = "api/profile/constants";
+    String UPDATE_PROFILE = "api/user/updateProfile";
 //    /**
 //     * @param map
 //     * @return
@@ -132,5 +133,15 @@ public interface ApiInterface {
      */
     @GET(GET_CONSTANT)
     Call<com.skeleton.model.profile.Response> getResponse();
+
+    /**
+     * @param authorization access token
+     * @param map           hash map
+     * @return map
+     */
+    @Multipart
+    @PUT(UPDATE_PROFILE)
+    Call<SignUpResponseModel> updateProfile(@Header(AUTHORIZATION) String authorization,
+                                            @PartMap HashMap<String, RequestBody> map);
 }
 

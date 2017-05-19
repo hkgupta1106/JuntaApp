@@ -1,10 +1,8 @@
 package com.skeleton.activity;
 
-//import android.content.Intent;
-
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -12,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-//import android.widget.TextView;
 
 import com.skeleton.R;
 import com.skeleton.constant.AppConstant;
@@ -32,6 +29,7 @@ import io.paperdb.Paper;
  */
 public class OTPActivity extends AppCompatActivity implements AppConstant {
 
+    private static final int REQUEST_CODE = 1;
     private EditText etText1, etText2, etText3, etText4;
     private Button btnVerify, btnResendOtp, btnEditNo;
     private String otp, accessToken;
@@ -41,17 +39,7 @@ public class OTPActivity extends AppCompatActivity implements AppConstant {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
-        etText1 = (EditText) findViewById(R.id.et_text1);
-        etText2 = (EditText) findViewById(R.id.et_text2);
-        etText3 = (EditText) findViewById(R.id.et_text3);
-        etText4 = (EditText) findViewById(R.id.et_text4);
-        btnVerify = (Button) findViewById(R.id.btn_verify);
-        btnResendOtp = (Button) findViewById(R.id.btn_resendotp);
-        btnEditNo = (Button) findViewById(R.id.btn_editno);
-        tvCustomText = (TextView) findViewById(R.id.tv_customtext);
-        tvPhoneNo = (TextView) findViewById(R.id.tv_phoneno);
-        tvCountryCode = (TextView) findViewById(R.id.tv_countrycode);
-        tvSkip = (TextView) findViewById(R.id.tv_skip);
+        init();
 
 
         Paper.init(getApplicationContext());
@@ -106,7 +94,6 @@ public class OTPActivity extends AppCompatActivity implements AppConstant {
 
         });
 
-        accessToken = Paper.book().read("accessToken");
         final SignUpResponseModel signUpResponseModel = Paper.book().read("userProfile");
 
         tvCustomText.setText("Phone Number Verification");
@@ -163,9 +150,31 @@ public class OTPActivity extends AppCompatActivity implements AppConstant {
         btnEditNo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-
+                Intent intent = new Intent(getApplicationContext(), EditNoActivity.class);
+                startActivity(intent);
             }
         });
 
     }
+
+    /**
+     * initaialization
+     */
+    public void init() {
+        etText1 = (EditText) findViewById(R.id.et_text1);
+        etText2 = (EditText) findViewById(R.id.et_text2);
+        etText3 = (EditText) findViewById(R.id.et_text3);
+        etText4 = (EditText) findViewById(R.id.et_text4);
+        btnVerify = (Button) findViewById(R.id.btn_verify);
+        btnResendOtp = (Button) findViewById(R.id.btn_resendotp);
+        btnEditNo = (Button) findViewById(R.id.btn_editno);
+        tvCustomText = (TextView) findViewById(R.id.tv_customtext);
+        tvPhoneNo = (TextView) findViewById(R.id.tv_phoneno);
+        tvCountryCode = (TextView) findViewById(R.id.tv_countrycode);
+        tvSkip = (TextView) findViewById(R.id.tv_skip);
+        Paper.init(getApplication());
+
+        accessToken = Paper.book().read("accessToken");
+    }
+
 }

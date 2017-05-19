@@ -13,7 +13,7 @@
         android:layout_marginTop="30dp"
         android:drawablePadding="10dp"
         android:gravity="center"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="text"
         android:id="@+id/et_email"/>
 
@@ -23,28 +23,28 @@
         android:layout_marginTop="20dp"
         android:drawablePadding="10dp"
         android:gravity="center"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:id="@+id/et_password"/>
 
     <CheckBox
-        android:id="@+id/tv_ForgotPassword"
+        android:id="@+id/tv_rememberme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:clickable="true"
-        android:text="Remember Me"
+        android:text="@string/remember_me"
         android:textColor="@color/black"/>
 
     <TextView
-        android:id="@+id/tv_Signup"
+        android:id="@+id/tv_forgotpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:gravity="center"
-        android:text="Forgot Password"
+        android:text="@string/forgot_password"
         android:textColor="@color/black"/>
 
     <Button
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_button_background"
-        android:text="Signin"
+        android:text="@string/signin"
         android:textColor="@color/white"
         />
 

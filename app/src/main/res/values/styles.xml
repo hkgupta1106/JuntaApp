@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">#80000000</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowEnableSplitTouch">false</item>
         <item name="android:splitMotionEvents">false</item>
@@ -76,5 +76,9 @@
         <item name="android:layout_marginTop">18dp</item>
         <item name="android:drawableEnd">@drawable/height_dropdown</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
     </style>
 </resources>

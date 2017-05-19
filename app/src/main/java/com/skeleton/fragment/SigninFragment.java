@@ -66,7 +66,8 @@ public class SigninFragment extends Fragment implements AppConstant {
                             Toast.makeText(getContext(), String.valueOf(signUpResponseModel.getStatusCode()), Toast.LENGTH_SHORT).show();
                             if ("200".equals(String.valueOf(signUpResponseModel.getStatusCode()))) {
                                 Paper.book().write("accessToken", ACCESS_START + signUpResponseModel.getData().getAccessToken());
-                                Toast.makeText(getContext(), signUpResponseModel.getData().getAccessToken(), Toast.LENGTH_SHORT).show();
+                                accessToken = Paper.book().read("accessToken");
+                                Toast.makeText(getContext(), accessToken, Toast.LENGTH_SHORT).show();
                                 Toast.makeText(getContext(), "Login successfully", Toast.LENGTH_SHORT).show();
                                 if (signUpResponseModel.getData().getUserDetails().isPhoneVerified()) {
                                     startActivity(new Intent(getContext(), ProfileActivity.class));

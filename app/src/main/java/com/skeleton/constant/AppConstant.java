@@ -42,4 +42,14 @@ public interface AppConstant {
 
     String ACCESS_TOKEN = "accessToken";
     String ACCESS_START = "bearer ";
+
+    String KEY_FRAGMENT_RELATIONSHIP_HISTORY = "relationshipHistory";
+    String KEY_FRAGMENT_ETHNICITY = "ethnicity";
+    String KEY_FRAGMENT_RELIGION = "religion";
+    String KEY_FRAGMENT_HEIGHT = "height";
+    String KEY_FRAGMENT_BODY_TYPE = "bodyType";
+    String KEY_FRAGMENT_SMOKING = "smoking";
+    String KEY_FRAGMENT_DRINKING = "drinking";
+    String KEY_FRAGMENT_ORIENTAION = "orientation";
+    String KEY_NEW_NUMBER = "newNumber";
 }
