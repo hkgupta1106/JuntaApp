@@ -52,4 +52,5 @@ public interface AppConstant {
     String KEY_FRAGMENT_DRINKING = "drinking";
     String KEY_FRAGMENT_ORIENTAION = "orientation";
     String KEY_NEW_NUMBER = "newNumber";
+    String KEY_STEP1_COMPLETE_OR_SKIP = "step1CompleteOrSkip";
 }

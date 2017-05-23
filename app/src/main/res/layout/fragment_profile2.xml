@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/steps_2"
             android:layout_marginTop="30dp"
-            android:layout_marginStart="96dp"/>
+            android:layout_marginStart="80dp"/>
         </RelativeLayout>
 
         <TextView

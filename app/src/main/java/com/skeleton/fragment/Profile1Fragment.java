@@ -2,11 +2,14 @@ package com.skeleton.fragment;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,15 +36,24 @@ import okhttp3.RequestBody;
 public class Profile1Fragment extends BaseFragment {
     private MaterialEditText etRelationshipHistory, etEthencity, etReligion, etHeight, etBodyType, etSmoking, etDrinking, etOrientation;
     private Response response1;
-    private TextView tvText1, tvText2, tvText3, tvText4, tvText5, tvText6, tvText7, tvText8;
+    private TextView tvText1, tvText2, tvText3, tvText4, tvText5, tvText6, tvText7, tvText8, tvCustomText, tvSkip;
     private Button btnNext;
     private String accessToken;
+    private Boolean step1CompleteOrSkip = false;
+    private ImageView ivBackButton;
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_profile1, container, false);
         init(view);
 
+        tvCustomText.setText("Profile Completeness");
+        ivBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                getActivity().finish();
+            }
+        });
         ApiInterface apiInterface = RestClient.getApiInterface();
         apiInterface.getResponse().enqueue(new ResponseResolver<com.skeleton.model.profile.Response>(getContext(), true, true) {
 
@@ -58,6 +70,7 @@ public class Profile1Fragment extends BaseFragment {
                 etDrinking.setOnClickListener(Profile1Fragment.this);
                 etOrientation.setOnClickListener(Profile1Fragment.this);
                 btnNext.setOnClickListener(Profile1Fragment.this);
+                tvSkip.setOnClickListener(Profile1Fragment.this);
             }
 
             @Override
@@ -99,6 +112,8 @@ public class Profile1Fragment extends BaseFragment {
             case R.id.btn_next:
                 update();
                 break;
+            case R.id.tv_skip:
+                skip();
             default:
                 break;
         }
@@ -146,7 +161,9 @@ public class Profile1Fragment extends BaseFragment {
         tvText7 = (TextView) view.findViewById(R.id.tv_text7);
         tvText8 = (TextView) view.findViewById(R.id.tv_text8);
         btnNext = (Button) view.findViewById(R.id.btn_next);
-
+        tvCustomText = (TextView) view.findViewById(R.id.tv_customtext);
+        ivBackButton = (ImageView) view.findViewById(R.id.ivbackbutton);
+        tvSkip = (TextView) view.findViewById(R.id.tv_skip);
         Paper.init(getContext());
 
         accessToken = Paper.book().read("accessToken");
@@ -156,6 +173,7 @@ public class Profile1Fragment extends BaseFragment {
      * update data
      */
     public void update() {
+        step1CompleteOrSkip = true;
         HashMap<String, RequestBody> hashMap = new MultipartParams.Builder()
                 .add(KEY_FRAGMENT_RELATIONSHIP_HISTORY, etRelationshipHistory.getText().toString())
                 .add(KEY_FRAGMENT_ETHNICITY, etEthencity.getText().toString())
@@ -165,12 +183,19 @@ public class Profile1Fragment extends BaseFragment {
                 .add(KEY_FRAGMENT_SMOKING, etSmoking.getText().toString())
                 .add(KEY_FRAGMENT_DRINKING, etDrinking.getText().toString())
                 .add(KEY_FRAGMENT_ORIENTAION, etOrientation.getText().toString())
+                .add(KEY_STEP1_COMPLETE_OR_SKIP,step1CompleteOrSkip)
                 .build().getMap();
         RestClient.getApiInterface().updateProfile(accessToken, hashMap)
                 .enqueue(new ResponseResolver<SignUpResponseModel>(getActivity(), true, true) {
                     @Override
                     public void success(final SignUpResponseModel signUpResponseModel) {
                         Toast.makeText(getContext(), "update successfully", Toast.LENGTH_SHORT).show();
+                        Profile2Fragment profile2Fragment = new Profile2Fragment();
+                        FragmentManager fm = getFragmentManager();
+                        FragmentTransaction ft = fm.beginTransaction();
+                        ft.replace(R.id.rllayout, profile2Fragment)
+                                .addToBackStack(null)
+                                .commit();
                     }
 
                     @Override
@@ -178,6 +203,15 @@ public class Profile1Fragment extends BaseFragment {
                         Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    /**
+     * skip method
+     */
+    public void skip()
+    {
+        step1CompleteOrSkip = false;
+        
     }
 
 }

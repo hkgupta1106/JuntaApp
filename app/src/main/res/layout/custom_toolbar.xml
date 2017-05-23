@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="18dp"
-            android:src="@drawable/ic_backbutton"/>
+            android:src="@drawable/ic_backbutton"
+            android:id="@+id/ivbackbutton"/>
 
         <TextView
             android:id="@+id/tv_customtext"
@@ -25,7 +26,6 @@
             android:layout_gravity="center"
             android:layout_weight="8"
             android:gravity="center"
-            android:text="@string/phone_number_verification"
             android:textColor="@color/white"
             android:textSize="16sp"/>
 

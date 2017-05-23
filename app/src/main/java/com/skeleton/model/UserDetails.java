@@ -122,4 +122,32 @@ public class UserDetails {
     public void setPhoneVerified(final boolean phoneVerified) {
         this.phoneVerified = phoneVerified;
     }
+
+    /**
+     * @return boolean
+     */
+    public boolean isStep1CompleteOrSkip() {
+        return step1CompleteOrSkip;
+    }
+
+    /**
+     * @param step1CompleteOrSkip boolean
+     */
+    public void setStep1CompleteOrSkip(final boolean step1CompleteOrSkip) {
+        this.step1CompleteOrSkip = step1CompleteOrSkip;
+    }
+
+    /**
+     * @return boolean
+     */
+    public boolean isStep2CompleteOrSkip() {
+        return step2CompleteOrSkip;
+    }
+
+    /**
+     * @param step2CompleteOrSkip boolean
+     */
+    public void setStep2CompleteOrSkip(final boolean step2CompleteOrSkip) {
+        this.step2CompleteOrSkip = step2CompleteOrSkip;
+    }
 }

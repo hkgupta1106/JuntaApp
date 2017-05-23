@@ -3,7 +3,6 @@ package com.skeleton.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,19 +55,15 @@ public class SignupFragment extends Fragment implements AppConstant {
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-        Log.d("debug", "button clicked");
         Paper.init(getContext());
         final View view = inflater.inflate(R.layout.fragment_signup, container, false);
         initiallization(view);
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                Log.d("debug", "button clicked");
                 selectedGender = rgGender.getCheckedRadioButtonId();
                 rbGender = (RadioButton) view.findViewById(selectedGender);
                 if (isValidate()) {
-                    Log.d("debug", "validation successful");
-
                     if ("Male".equals(rbGender)) {
                         selectedGender = 0;
                     } else {
@@ -83,12 +78,11 @@ public class SignupFragment extends Fragment implements AppConstant {
                         @Override
                         public void success(final SignUpResponseModel signUpResponseModel) {
                             Toast.makeText(getContext(), "successful", Toast.LENGTH_SHORT).show();
-                            clearEditText();
-                            accessToken = signUpResponseModel.getData().getAccessToken();
-
-                            Toast.makeText(getContext(), accessToken, Toast.LENGTH_SHORT).show();
-                            Log.d("debug", String.valueOf(signUpResponseModel.getStatusCode()));
                             if ("200".equals(String.valueOf(signUpResponseModel.getStatusCode()))) {
+                                clearEditText();
+                                accessToken = signUpResponseModel.getData().getAccessToken();
+
+                                Toast.makeText(getContext(), accessToken, Toast.LENGTH_SHORT).show();
                                 Paper.book().write("accessToken", ACCESS_START + accessToken);
                                 Toast.makeText(getActivity(), "200 success added to server", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getContext(), OTPActivity.class);
@@ -101,8 +95,6 @@ public class SignupFragment extends Fragment implements AppConstant {
 
                         }
                     });
-                } else {
-                    Log.d("debug", "validation unsuccessful");
                 }
             }
         });
@@ -119,10 +111,6 @@ public class SignupFragment extends Fragment implements AppConstant {
                             Glide.with(SignupFragment.this)
                                     .load(list.get(0).getQueryUri())
                                     .into(ciProfilePic);
-                            Log.e("debug", list.get(0).getQueryUri());
-                        } else {
-                            Log.e("debug", "Error");
-
                         }
                     }
 
@@ -150,7 +138,7 @@ public class SignupFragment extends Fragment implements AppConstant {
         ciProfilePic = (ImageView) view.findViewById(R.id.ci_profilepic);
         btnSignup = (Button) view.findViewById(R.id.btn_Signup);
         rgGender = (RadioGroup) view.findViewById(R.id.rg_Gender);
-        Log.e("debug", "initialization");
+
     }
 
     /**
@@ -167,7 +155,6 @@ public class SignupFragment extends Fragment implements AppConstant {
                 && selectedGender != -1) {
             return validateEditText.checkEmail(etEmail);
         } else {
-            Log.e("debug", "error");
             return false;
         }
     }

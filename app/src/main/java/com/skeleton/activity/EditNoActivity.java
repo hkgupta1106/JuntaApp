@@ -25,7 +25,6 @@ import okhttp3.RequestBody;
  * edit no acticity
  */
 
-
 public class EditNoActivity extends AppCompatActivity implements AppConstant {
 
     private MaterialEditText etMobileNo;

@@ -136,6 +136,7 @@ public class OTPActivity extends AppCompatActivity implements AppConstant {
                 apiInterface.resendOtp(accessToken).enqueue(new ResponseResolver<SignUpResponseModel>(getApplicationContext(), true, true) {
                     @Override
                     public void success(final SignUpResponseModel signUpResponseModel) {
+//                        Toast.makeText(getApplicationContext(),signUpResponseModel.getData().getUserDetails().geto)
                         Toast.makeText(getApplicationContext(), "New Otp sent", Toast.LENGTH_SHORT).show();
                     }
 
